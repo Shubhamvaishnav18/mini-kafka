@@ -1,0 +1,20 @@
+services:
+
+  mini-kafka:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: mini-kafka:1.0
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - mini-kafka-data:/app/data
+
+    restart: unless-stopped
+
+
+volumes:
+  mini-kafka-data:
